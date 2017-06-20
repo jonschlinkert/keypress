@@ -1,4 +1,3 @@
-
 /**
  * Module dependencies.
  */
@@ -146,7 +145,6 @@ if (!listenerCount) {
 /*
   Some patterns seen in terminal key escape codes, derived from combos seen
   at http://www.midnight-commander.org/browser/lib/tty/key.c
-
   ESC letter
   ESC [ letter
   ESC [ modifier letter
@@ -161,7 +159,6 @@ if (!listenerCount) {
   ESC [ [ 1 ; modifier letter
   ESC ESC [ num char
   ESC ESC O letter
-
   - char is usually ~ but $ and ^ also happen with rxvt
   - modifier is 1 +
                 (shift     * 1) +
@@ -244,7 +241,7 @@ function emitKey(stream, s) {
 
   } else if (s.length === 1 && s >= 'A' && s <= 'Z') {
     // shift+letter
-    key.name = s.toLowerCase();
+    key.name = s;
     key.shift = true;
 
   } else if (parts = metaKeyCodeRe.exec(s)) {
